@@ -22,9 +22,31 @@ document.body.appendChild( renderer.domElement );
 // camara
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const controlesCamara = new OrbitControls( camera, renderer.domElement );
-camera.position.z = 2;
-camera.position.y = 1;
-camera.position.x = 1;
+camera.position.y = 1.1;
+camera.position.x = 0.5;
+camera.position.z = -2;
+
+//animacion camara
+const initialZ = -2;
+const finalZ = 1.25;
+const duration = 1500; 
+let startTime = null;
+
+function animateCameraZ(time) {
+  if (!startTime) startTime = time;
+  const elapsed = time - startTime;
+  const t = Math.min(elapsed / duration, 1); 
+
+  camera.position.z = initialZ + (finalZ - initialZ) * t;
+  if (t < 1) {
+    requestAnimationFrame(animateCameraZ);
+  }
+}
+
+
+
+
+  
 
 // importar escena lapras
 const { escena: escenaLapras, camara: camaraLapras, update: updateLapras, moverLapras } = crearEscenaLapras();
@@ -193,6 +215,8 @@ loader.load( '/nintendo_ds_lite.glb', ( gltf ) => {
 
 function animate() {
 
+
+
   controlesCamara.update(); 
   renderer.render( escenaDs, camera );
 
@@ -206,7 +230,8 @@ function animate() {
   renderer.render(escenaLapras, camaraLapras);
   renderer.setRenderTarget(null);
 }
-
+//animaciones
+requestAnimationFrame(animateCameraZ);
 
 
 window.addEventListener("resize", () => {
