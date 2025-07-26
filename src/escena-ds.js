@@ -203,7 +203,7 @@ window.addEventListener('touchend', () => {
 
 // modelo ds
 const loader = new GLTFLoader();
-loader.load( '/nintendo_ds_lite.glb', ( gltf ) => {
+loader.load( 'nintendo_ds_lite.glb', ( gltf ) => {
   const modeloDs = gltf.scene;
   modeloDs.scale.set(0.01, 0.01, 0.01); 
   escenaDs.add( modeloDs );

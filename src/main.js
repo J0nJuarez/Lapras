@@ -66,7 +66,7 @@ const marGeometria = new THREE.PlaneGeometry( 10000, 10000 );
 					{
 						textureWidth: 32,
 						textureHeight: 32,
-						waterNormals: new THREE.TextureLoader().load( '/mar.png', function ( texture ) {
+						waterNormals: new THREE.TextureLoader().load( 'mar.png', function ( texture ) {
 
 							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
@@ -111,7 +111,7 @@ actualizarSol();
 
 // cargar modelo de Lapras en el objeto Lapras
 const loader = new GLTFLoader();
-loader.load( '/lapras_shiny.glb', ( gltf ) => {
+loader.load( 'lapras_shiny.glb', ( gltf ) => {
   const modeloLapras = gltf.scene;
   modeloLapras.scale.set(0.01, 0.01, 0.01); 
   modeloLapras.position.set(0, -0.95, 0); 

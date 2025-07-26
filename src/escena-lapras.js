@@ -26,7 +26,7 @@ export function crearEscenaLapras() {
     {
       textureWidth: 512,
       textureHeight: 512,
-      waterNormals: new THREE.TextureLoader().load('/mar.png', texture => {
+      waterNormals: new THREE.TextureLoader().load('mar.png', texture => {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
       }),
       sunDirection: new THREE.Vector3(),
@@ -59,7 +59,7 @@ export function crearEscenaLapras() {
   escena.add(lapras);
 
   const loader = new GLTFLoader();
-  loader.load('/lapras_shiny.glb', gltf => {
+  loader.load('lapras_shiny.glb', gltf => {
     const modeloLapras = gltf.scene;
     modeloLapras.scale.set(0.01, 0.01, 0.01);
     modeloLapras.position.set(0, -1.05, 0);
