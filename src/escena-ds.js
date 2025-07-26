@@ -10,7 +10,7 @@ import GUI from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
 // escena
 const escenaDs = new THREE.Scene();
-const fondoColor = new THREE.Color(0xfffdd1); // Color cielo
+const fondoColor = new THREE.Color(0xfffFF1); 
 escenaDs.background = fondoColor;
 
 // Renderer
@@ -22,7 +22,7 @@ document.body.appendChild( renderer.domElement );
 // camara
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 const controlesCamara = new OrbitControls( camera, renderer.domElement );
-camera.position.y = 1.1;
+camera.position.y = 1.9;
 camera.position.x = 0.5;
 camera.position.z = -2;
 

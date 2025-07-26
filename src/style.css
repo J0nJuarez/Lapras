@@ -4,10 +4,12 @@ body{
 }
 
 #logo {
-    position: absolute;
-    top: 5%;
-    left: 25%;
-    width: 50%;
-    max-width: 300px;
-    height: auto;
+position: absolute;
+top: 5%;
+left: 50%;
+transform: translateX(-50%);
+width: 50%;
+max-width: 250px;
+height: auto;
+
 }
