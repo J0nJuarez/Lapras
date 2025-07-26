@@ -13,7 +13,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
 document.body.appendChild( renderer.domElement );
 // control camara
-const controlesCamara = new OrbitControls( camera, renderer.domElement );
+// const controlesCamara = new OrbitControls( camera, renderer.domElement );
 
 
 // camara
@@ -125,6 +125,7 @@ loader.load( '/lapras_shiny.glb', ( gltf ) => {
 const lapras = new THREE.Mesh(
   
 );
+lapras.position.y = -0.1;
  scene.add( lapras );
 // velociad de flotar
 let tiempoFlotar = 0;
